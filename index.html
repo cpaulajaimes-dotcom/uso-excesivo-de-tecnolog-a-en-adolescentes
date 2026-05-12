@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Enfócate YA</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header>
+
+<div class="header-top">
+
+<div class="header-text">
+
+<h1>Análisis estadístico sobre el uso de tecnología</h1>
+
+<p>Analiza cómo la tecnología influye en tu concentración</p>
+
+<div id="frase"></div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ========================= -->
+<!-- NAV -->
+<!-- ========================= -->
+
+<nav>
+
+<a href="index.html">
+<i class="fa-solid fa-house"></i> Inicio
+</a>
+
+<a href="datosreales.html">
+<i class="fa-solid fa-list-check"></i> Datos reales
+</a>
+
+<a href="pregunta1.html">
+<i class="fa-solid fa-brain"></i> Pregunta 1
+</a>
+
+</nav>
+
+<!-- ========================= -->
+<!-- HERO PRINCIPAL -->
+<!-- ========================= -->
+
+<section class="card hero-card">
+
+<div class="hero-bg"></div>
+<div class="hero-light"></div>
+
+<div class="hero-content">
+
+<div class="hero-mini-line"></div>
+
+<h2 class="hero-title">
+Enfócate YA
+</h2>
+
+<p class="hero-subtitle">
+Tu atención también necesita cuidado.
+</p>
+
+<div class="mini-info">
+
+Este proyecto se desarrolla a partir de la problemática del uso excesivo de la tecnología en adolescentes y su impacto en la atención. Sin embargo, su enfoque principal es matemático, ya que mediante las respuestas obtenidas se realizará un pequeño análisis estadístico y la aplicación de la regla de tres. De esta manera, se busca representar la información de forma cuantitativa, permitiendo interpretar los datos de manera más clara y objetiva dentro del contexto del estudio.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- ENCUESTA -->
+<!-- ========================= -->
+
+<section class="card">
+
+<h2>
+<i class="fa-solid fa-clipboard-question"></i>
+Encuesta Inteligente
+</h2>
+
+<div class="mini-info">
+
+Esta encuesta analiza tus hábitos digitales y detecta cuánto puede influir la tecnología en tu concentración y rendimiento académico.
+
+</div>
+
+<p>
+Responde honestamente para obtener un resultado real.
+</p>
+
+<label>
+1. ¿Cuántas horas usas el celular al día?
+</label>
+
+<select id="p1">
+<option>0 a 2 horas</option>
+<option>2 a 4 horas</option>
+<option>4 a 6 horas</option>
+<option>6 a 8 horas</option>
+<option>8 a 10 o más horas al día</option>
+</select>
+
+<label>
+2. ¿Puedes estar concentrado fácilmente sin la necesidad de revisar el celular?
+</label>
+
+<select id="p3">
+<option>Sí</option>
+<option>No</option>
+<option>A veces</option>
+</select>
+
+<button onclick="analizar()">
+
+<i class="fa-solid fa-chart-line"></i>
+Analizar Resultado
+
+</button>
+
+</section>
+
+<!-- ========================= -->
+<!-- RESULTADO -->
+<!-- ========================= -->
+
+<section class="card">
+
+<h2>
+<i class="fa-solid fa-chart-simple"></i>
+Resultado
+</h2>
+
+<div id="simbolo">
+<i class="fa-solid fa-mobile-screen"></i>
+</div>
+
+<div id="mensaje">
+Completa la encuesta
+</div>
+
+<div class="barra-encuesta">
+<div id="nivel"></div>
+</div>
+
+<div id="porcentaje"></div>
+
+<div id="detalle"></div>
+
+<div id="analisisExtra">
+
+<p id="tiempoPerdido"></p>
+
+<p id="recomendacion"></p>
+
+</div>
+
+</section>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Datos reales</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* ========================= */
+/* MICROSOFT FORMS STYLE */
+/* ========================= */
+
+.forms-results{
+margin-top:20px;
+}
+
+.resultado-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 0;
+border-bottom:1px solid #e2e8f0;
+font-weight:600;
+color:#1e293b;
+}
+
+.left-side{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.color-dot{
+width:18px;
+height:18px;
+border-radius:50%;
+}
+
+.azul{
+background:#3b82f6;
+}
+
+.rosa{
+background:#ec4899;
+}
+
+.turquesa{
+background:#06b6d4;
+}
+
+.morado{
+background:#8b5cf6;
+}
+
+.verde{
+background:#22c55e;
+}
+
+/* ========================= */
+/* CIRCULOS FORMS */
+/* ========================= */
+
+.forms-chart-container{
+display:flex;
+justify-content:center;
+margin-top:45px;
+margin-bottom:20px;
+}
+
+.forms-chart{
+width:320px;
+height:320px;
+border-radius:50%;
+position:relative;
+box-shadow:0 15px 35px rgba(37,99,235,0.15);
+}
+
+/* CENTRO BLANCO */
+
+.forms-chart::after{
+content:"";
+position:absolute;
+width:170px;
+height:170px;
+background:white;
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+/* ========================= */
+/* GRAFICA 1 */
+/* ========================= */
+
+.forms-chart1{
+background:
+conic-gradient(
+#3b82f6 0deg 0deg,
+#ec4899 0deg 84deg,
+#06b6d4 84deg 179deg,
+#8b5cf6 179deg 306deg,
+#22c55e 306deg 360deg
+);
+}
+
+/* ========================= */
+/* GRAFICA 2 */
+/* ========================= */
+
+.forms-chart2{
+background:
+conic-gradient(
+#3b82f6 0deg 190deg,
+#ec4899 190deg 255deg,
+#06b6d4 255deg 360deg
+);
+}
+
+/* ========================= */
+/* PORCENTAJES */
+/* ========================= */
+
+.chart-point{
+position:absolute;
+display:flex;
+align-items:center;
+gap:10px;
+font-size:18px;
+font-weight:800;
+color:#1e293b;
+}
+
+.point-line{
+width:38px;
+height:4px;
+border-radius:20px;
+}
+
+/* COLORES */
+
+.azul-line{
+background:#3b82f6;
+}
+
+.rosa-line{
+background:#ec4899;
+}
+
+.turquesa-line{
+background:#06b6d4;
+}
+
+.morado-line{
+background:#8b5cf6;
+}
+
+.verde-line{
+background:#22c55e;
+}
+
+/* ========================= */
+/* POSICIONES */
+/* ========================= */
+
+/* GRAFICA 1 */
+
+.cp1{
+top:25px;
+right:-40px;
+}
+
+.cp2{
+right:-70px;
+top:145px;
+}
+
+.cp3{
+left:-70px;
+bottom:80px;
+}
+
+.cp4{
+left:-10px;
+top:10px;
+}
+
+/* GRAFICA 2 */
+
+.s1{
+right:-60px;
+top:140px;
+}
+
+.s2{
+left:-15px;
+bottom:35px;
+}
+
+.s3{
+left:-60px;
+top:100px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:768px){
+
+.forms-chart{
+width:240px;
+height:240px;
+}
+
+.forms-chart::after{
+width:125px;
+height:125px;
+}
+
+.chart-point{
+font-size:14px;
+}
+
+.point-line{
+width:25px;
+}
+
+.cp1{
+right:-25px;
+}
+
+.cp2{
+right:-45px;
+}
+
+.cp3{
+left:-45px;
+}
+
+.cp4{
+left:0px;
+}
+
+.s1{
+right:-40px;
+}
+
+.s3{
+left:-40px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header>
+
+<div class="header-top">
+
+<div class="header-text">
+
+<h1>Datos reales de la encuesta</h1>
+
+<p>Resultados obtenidos mediante Microsoft Forms</p>
+
+<div id="frase">
+Visualización estadística de respuestas reales.
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ========================= -->
+<!-- NAV -->
+<!-- ========================= -->
+
+<nav>
+
+<a href="index.html">
+<i class="fa-solid fa-house"></i> Inicio
+</a>
+
+<a href="datosreales.html">
+<i class="fa-solid fa-chart-pie"></i> Datos reales
+</a>
+
+<a href="pregunta1.html">
+<i class="fa-solid fa-square-poll-vertical"></i> Pregunta 1
+</a>
+
+<a href="pregunta2.html">
+<i class="fa-solid fa-brain"></i> Pregunta 2
+</a>
+
+</nav>
+
+<!-- ========================= -->
+<!-- INTRO -->
+<!-- ========================= -->
+
+<section class="card">
+
+<h2>
+<i class="fa-solid fa-chart-column"></i>
+Datos reales de la encuesta
+</h2>
+
+<div class="mini-info">
+Resultados obtenidos mediante una encuesta realizada a 34 adolescentes sobre el uso excesivo de la tecnología.
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PREGUNTA 1 -->
+<!-- ========================= -->
+
+<section class="card">
+
+<h2>
+<i class="fa-solid fa-mobile-screen"></i>
+¿Cuántas horas usas el celular al día?
+</h2>
+
+<div class="forms-results">
+
+<div class="resultado-item">
+<div class="left-side">
+<div class="color-dot azul"></div>
+<p>0-2 horas al día</p>
+</div>
+<span>0 respuestas</span>
+</div>
+
+<div class="resultado-item">
+<div class="left-side">
+<div class="color-dot rosa"></div>
+<p>2-4 horas al día</p>
+</div>
+<span>8 respuestas</span>
+</div>
+
+<div class="resultado-item">
+<div class="left-side">
+<div class="color-dot turquesa"></div>
+<p>4-6 horas al día</p>
+</div>
+<span>9 respuestas</span>
+</div>
+
+<div class="resultado-item">
+<div class="left-side">
+<div class="color-dot morado"></div>
+<p>6-8 horas al día</p>
+</div>
+<span>12 respuestas</span>
+</div>
+
+<div class="resultado-item">
+<div class="left-side">
+<div class="color-dot verde"></div>
+<p>8-10 o más horas al día</p>
+</div>
+<span>5 respuestas</span>
+</div>
+
+</div>
+
+<!-- CIRCULO -->
+
+<div class="forms-chart-container">
+
+<div class="forms-chart forms-chart1">
+
+<div class="chart-point cp1">
+<div class="point-line rosa-line"></div>
+24%
+</div>
+
+<div class="chart-point cp2">
+<div class="point-line turquesa-line"></div>
+26%
+</div>
+
+<div class="chart-point cp3">
+<div class="point-line morado-line"></div>
+35%
+</div>
+
+<div class="chart-point cp4">
+<div class="point-line verde-line"></div>
+15%
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PREGUNTA 2 -->
+<!-- ========================= -->
+
+<section class="card">
+
+<h2>
+<i class="fa-solid fa-brain"></i>
+¿Puede estar concentrado fácilmente sin la necesidad de revisar el celular?
+</h2>
+
+<div class="forms-results">
+
+<div class="resultado-item">
+<div class="left-side">
+<div class="color-dot azul"></div>
+<p>Sí</p>
+</div>
+<span>18 respuestas</span>
+</div>
+
+<div class="resultado-item">
+<div class="left-side">
+<div class="color-dot rosa"></div>
+<p>No</p>
+</div>
+<span>6 respuestas</span>
+</div>
+
+<div class="resultado-item">
+<div class="left-side">
+<div class="color-dot turquesa"></div>
+<p>A veces</p>
+</div>
+<span>10 respuestas</span>
+</div>
+
+</div>
+
+<!-- CIRCULO -->
+
+<div class="forms-chart-container">
+
+<div class="forms-chart forms-chart2">
+
+<div class="chart-point s1">
+<div class="point-line azul-line"></div>
+53%
+</div>
+
+<div class="chart-point s2">
+<div class="point-line rosa-line"></div>
+18%
+</div>
+
+<div class="chart-point s3">
+<div class="point-line turquesa-line"></div>
+29%
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+
+</html>
