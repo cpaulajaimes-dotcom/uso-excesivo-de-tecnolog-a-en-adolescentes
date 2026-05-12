@@ -65,6 +65,9 @@ rel="stylesheet">
 <li>El 18% indicó que no puede concentrarse fácilmente sin revisar el celular.</li>
 <li>Los resultados muestran que el uso frecuente del celular puede afectar la atención y concentración en algunos adolescentes.</li>
 </ul>
+
+<!-- Botón para ejecutar el cálculo -->
+<button id="btnEstadisticas">Calcular medidas adicionales</button>
 </section>
 
 <section class="card">
@@ -91,21 +94,22 @@ rel="stylesheet">
 <!-- ========================= -->
 <script src="script.js"></script>
 <script>
-  // Datos de Pregunta 2
   const datosPregunta2 = {
     opciones: ["Sí", "No", "A veces"],
     frecuencias: [18, 6, 10],
-    valores: [3, 1, 2] // asignamos valores representativos: Sí=3, No=1, A veces=2
+    valores: [3, 1, 2] // Sí=3, No=1, A veces=2
   };
 
-  const resultados2 = calcularEstadisticas(datosPregunta2.valores, datosPregunta2.frecuencias);
+  document.getElementById("btnEstadisticas").addEventListener("click", () => {
+    const resultados2 = calcularEstadisticas(datosPregunta2.valores, datosPregunta2.frecuencias);
 
-  document.querySelector(".estadistica-grid").innerHTML += `
-    <div class="estadistica-box"><h4>Media</h4><p>${resultados2.media.toFixed(2)}</p></div>
-    <div class="estadistica-box"><h4>Mediana</h4><p>${resultados2.mediana}</p></div>
-    <div class="estadistica-box"><h4>Moda</h4><p>${resultados2.moda}</p></div>
-    <div class="estadistica-box"><h4>Desviación estándar</h4><p>${resultados2.desviacion.toFixed(2)}</p></div>
-  `;
+    document.querySelector(".estadistica-grid").innerHTML += `
+      <div class="estadistica-box"><h4>Media</h4><p>${resultados2.media.toFixed(2)}</p></div>
+      <div class="estadistica-box"><h4>Mediana</h4><p>${resultados2.mediana}</p></div>
+      <div class="estadistica-box"><h4>Moda</h4><p>${resultados2.moda}</p></div>
+      <div class="estadistica-box"><h4>Desviación estándar</h4><p>${resultados2.desviacion.toFixed(2)}</p></div>
+    `;
+  });
 </script>
 
 </body>
