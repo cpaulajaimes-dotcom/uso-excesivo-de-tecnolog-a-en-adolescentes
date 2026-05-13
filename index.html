@@ -117,29 +117,49 @@ Esta encuesta analiza tus hábitos digitales y detecta cuánto puede influir la 
 Responde honestamente para obtener un resultado real.
 </p>
 
-<label>
-1. ¿Cuántas horas usas el celular al día?
-</label>
+<!-- GRID DE PREGUNTAS -->
 
-<select id="p1">
-<option>0 a 2 horas</option>
-<option>2 a 4 horas</option>
-<option>4 a 6 horas</option>
-<option>6 a 8 horas</option>
-<option>8 a 10 o más horas al día</option>
-</select>
+<div class="encuesta-grid">
 
-<label>
-2. ¿Puedes estar concentrado fácilmente sin la necesidad de revisar el celular?
-</label>
+  <!-- PREGUNTA 1 -->
 
-<select id="p2">
-<option>Sí</option>
-<option>No</option>
-<option>A veces</option>
-</select>
+  <div class="encuesta-item">
 
-<button id="btnAnalizar" onclick="analizar()">
+    <label>
+      1. ¿Cuántas horas usas el celular al día?
+    </label>
+
+    <select id="p1">
+      <option>0 a 2 horas</option>
+      <option>2 a 4 horas</option>
+      <option>4 a 6 horas</option>
+      <option>6 a 8 horas</option>
+      <option>8 a 10 o más horas al día</option>
+    </select>
+
+  </div>
+
+  <!-- PREGUNTA 2 -->
+
+  <div class="encuesta-item">
+
+    <label>
+      2. ¿Puedes estar concentrado fácilmente sin la necesidad de revisar el celular?
+    </label>
+
+    <select id="p2">
+      <option>Sí</option>
+      <option>No</option>
+      <option>A veces</option>
+    </select>
+
+  </div>
+
+</div>
+
+<!-- BOTON -->
+
+<button id="btnAnalizar">
 <i class="fa-solid fa-chart-line"></i>
 Analizar Resultado
 </button>
@@ -151,6 +171,8 @@ Analizar Resultado
 <!-- ========================= -->
 
 <section class="card">
+
+<div class="resultado-box">
 
 <h2>
 <i class="fa-solid fa-chart-simple"></i>
@@ -174,11 +196,20 @@ Completa la encuesta
 <div id="detalle"></div>
 
 <div id="analisisExtra">
+
 <p id="tiempoPerdido"></p>
+
 <p id="recomendacion"></p>
+
+</div>
+
 </div>
 
 </section>
+
+<!-- SCRIPT -->
+
+<script src="script.js"></script>
 
 </body>
 </html>
