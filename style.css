@@ -212,3 +212,34 @@ footer{text-align:center;padding:24px;font-size:14px;opacity:0.9;}
   #frase{justify-content:center;text-align:center;}
   .estadistica-box p{font-size:22px;}
 }
+
+/* ========================= */
+/* ENCUESTA - PREGUNTAS */
+/* ========================= */
+.pregunta-box {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.pregunta-box label {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #1e3a8a;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.pregunta-box select,
+.pregunta-box input[type="radio"] {
+  margin-top: 6px;
+  margin-right: 12px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* =================

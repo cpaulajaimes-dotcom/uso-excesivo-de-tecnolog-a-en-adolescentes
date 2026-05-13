@@ -195,3 +195,17 @@ function agregarRecuadrosEstadisticos(gridSelector, resultados) {
     </div>
   `;
 }
+
+/* ===================== */
+/* BOTÓN ANALIZAR RESULTADO */
+/* ===================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("btnAnalizar");
+  if(btn){
+    btn.addEventListener("click", () => {
+      // Aquí usamos la función analizar() ya existente
+      analizar();
+    });
+  }
+});
