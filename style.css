@@ -12,10 +12,11 @@
 /* ========================= */
 /* BODY */
 /* ========================= */
-body {
-  background: pink;
+body{
+  background:linear-gradient(135deg,#0f172a,#1e3a8a,#3b82f6);
+  color:white;
+  min-height:100vh;
 }
-
 
 /* ========================= */
 /* HEADER */
