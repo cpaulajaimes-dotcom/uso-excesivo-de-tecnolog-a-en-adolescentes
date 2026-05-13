@@ -22,27 +22,52 @@ th{background:#2563eb;color:white;padding:16px;font-size:16px;text-align:center;
 td{padding:14px;border-bottom:1px solid #e2e8f0;text-align:center;font-weight:500;color:#1e293b;}
 tr:hover{background:#eff6ff;}
 /* ========================= */
-/* SUBTITULOS */
-/* ========================= */
-.subtitulo-analisis{font-size:24px;color:#1e3a8a;margin-top:30px;margin-bottom:18px;display:flex;align-items:center;gap:10px;font-weight:800;}
-/* ========================= */
-/* LISTA */
-/* ========================= */
-.lista-analisis{padding-left:22px;margin-bottom:20px;}
-.lista-analisis li{margin-bottom:14px;line-height:1.8;color:#334155;}
-/* ========================= */
-/* REGLA DE 3 */
-/* ========================= */
-.regla3-box{background:linear-gradient(135deg,#eff6ff,#dbeafe);padding:24px;border-radius:20px;margin-top:20px;margin-bottom:25px;border-left:6px solid #2563eb;}
-.formula{font-size:24px;font-weight:800;color:#1e3a8a;text-align:center;margin:18px 0;}
-.resultado-formula{font-size:30px;color:#2563eb;}
-/* ========================= */
 /* BLOQUE ESTADISTICO */
 /* ========================= */
 .estadistica-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:25px;margin-bottom:30px;}
-.estadistica-box{background:linear-gradient(135deg,#eff6ff,#dbeafe);padding:22px;border-radius:20px;text-align:center;border:1px solid #bfdbfe;}
+.estadistica-box{background:linear-gradient(135deg,#eff6ff,#dbeafe);padding:22px;border-radius:20px;text-align:center;border:1px solid #bfdbfe;position:relative;cursor:pointer;transition:transform 0.2s;}
 .estadistica-box h4{font-size:18px;color:#1e3a8a;margin-bottom:10px;}
 .estadistica-box p{font-size:28px;font-weight:800;color:#2563eb;}
+.estadistica-box:hover{transform:scale(1.05);}
+
+/* Tooltip personalizado */
+.estadistica-box::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e3a8a;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.estadistica-box:hover::after {
+  opacity: 1;
+}
+
+/* Botón */
+#btnEstadisticas1 {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  margin-top: 15px;
+}
+#btnEstadisticas1:hover {
+  transform: scale(1.05);
+  background: #1e3a8a;
+}
 </style>
 </head>
 
@@ -66,12 +91,6 @@ tr:hover{background:#eff6ff;}
 </nav>
 
 <section class="card">
-<h2><i class="fa-solid fa-mobile-screen"></i> Pregunta analizada</h2>
-<div class="mini-info">Pregunta: <b>¿Cuántas horas usas el celular al día?</b></div>
-<p>En esta sección se realiza un análisis estadístico de los resultados obtenidos en la encuesta aplicada a 34 adolescentes.</p>
-</section>
-
-<section class="card">
 <h2><i class="fa-solid fa-table"></i> Tabla de frecuencias</h2>
 <div class="tabla-estadistica">
 <table>
@@ -88,41 +107,22 @@ tr:hover{background:#eff6ff;}
 <section class="card">
 <h2><i class="fa-solid fa-chart-line"></i> Resultados estadísticos</h2>
 <div class="estadistica-grid">
-<div class="estadistica-box"><h4>Total encuestados</h4><p>34</p></div>
-<div class="estadistica-box"><h4>Mayor frecuencia</h4><p>12</p></div>
-<div class="estadistica-box"><h4>Porcentaje mayor</h4><p>35%</p></div>
-<div class="estadistica-box"><h4>Menor frecuencia</h4><p>0</p></div>
+  <div class="estadistica-box" data-tooltip="Número total de estudiantes encuestados">
+    <h4>Total encuestados</h4><p>34</p>
+  </div>
+  <div class="estadistica-box" data-tooltip="La opción con más respuestas">
+    <h4>Mayor frecuencia</h4><p>12</p>
+  </div>
+  <div class="estadistica-box" data-tooltip="El porcentaje más alto obtenido">
+    <h4>Porcentaje mayor</h4><p>35%</p>
+  </div>
+  <div class="estadistica-box" data-tooltip="La opción con menos respuestas">
+    <h4>Menor frecuencia</h4><p>0</p>
+  </div>
 </div>
-<ul class="lista-analisis">
-<li>La opción con mayor frecuencia fue <b>6-8 horas al día</b> con 12 estudiantes.</li>
-<li>La mayoría de adolescentes utiliza el celular durante varias horas al día.</li>
-<li>Más del 60% usa el celular más de 4 horas diarias.</li>
-<li>Ningún estudiante seleccionó la opción de 0-2 horas.</li>
-<li>Los resultados reflejan un uso elevado de tecnología en los adolescentes encuestados.</li>
-</ul>
 
 <!-- Botón para ejecutar el cálculo -->
 <button id="btnEstadisticas1">Calcular medidas adicionales</button>
-</section>
-
-<section class="card">
-<h2><i class="fa-solid fa-calculator"></i> Aplicación de la regla de 3</h2>
-<p>Para calcular el porcentaje de cada respuesta se utilizó la regla de 3 simple.</p>
-<div class="regla3-box">
-<p>Ejemplo con la opción: <b>6-8 horas al día</b></p>
-<p class="formula">34 estudiantes → 100%</p>
-<p class="formula">12 estudiantes → X</p>
-<p class="formula">X = (12 × 100) ÷ 34</p>
-<p class="formula resultado-formula">X = 35%</p>
-</div>
-<p>Esto significa que aproximadamente el 35% de los adolescentes usan el celular entre 6 y 8 horas al día.</p>
-</section>
-
-<section class="card">
-<h2><i class="fa-solid fa-lightbulb"></i> Conclusión</h2>
-<p>Los resultados muestran que el uso excesivo del celular es frecuente entre los adolescentes encuestados. 
-La mayoría supera las 4 horas diarias de uso, lo cual puede influir en la concentración, el rendimiento académico y las actividades cotidianas.</p>
-<div class="mini-info">El análisis estadístico permitió interpretar los datos de forma cuantitativa mediante porcentajes, frecuencias y regla de 3.</div>
 </section>
 
 <!-- Enlaza tu script principal -->
@@ -138,10 +138,18 @@ La mayoría supera las 4 horas diarias de uso, lo cual puede influir en la conce
     const resultados1 = calcularEstadisticas(datosPregunta1.valores, datosPregunta1.frecuencias);
 
     document.querySelector(".estadistica-grid").innerHTML += `
-      <div class="estadistica-box"><h4>Media</h4><p>${resultados1.media.toFixed(2)} horas</p></div>
-      <div class="estadistica-box"><h4>Mediana</h4><p>${resultados1.mediana} horas</p></div>
-      <div class="estadistica-box"><h4>Moda</h4><p>${resultados1.moda} horas</p></div>
-      <div class="estadistica-box"><h4>Desviación estándar</h4><p>${resultados1.desviacion.toFixed(2)} horas</p></div>
+      <div class="estadistica-box" data-tooltip="Promedio de horas de uso">
+        <h4>Media</h4><p>${resultados1.media.toFixed(2)} horas</p>
+      </div>
+      <div class="estadistica-box" data-tooltip="Valor central de los datos">
+        <h4>Mediana</h4><p>${resultados1.mediana} horas</p>
+      </div>
+      <div class="estadistica-box" data-tooltip="Valor más repetido en la muestra">
+        <h4>Moda</h4><p>${resultados1.moda} horas</p>
+      </div>
+      <div class="estadistica-box" data-tooltip="Variabilidad de los datos">
+        <h4>Desviación estándar</h4><p>${resultados1.desviacion.toFixed(2)} horas</p>
+      </div>
     `;
   });
 </script>

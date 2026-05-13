@@ -171,3 +171,27 @@ function calcularEstadisticas(valores, frecuencias) {
 
   return { media, mediana, moda, desviacion };
 }
+
+/* ===================== */
+/* FUNCION PARA AGREGAR RECUEADROS CON TOOLTIP */
+/* ===================== */
+
+function agregarRecuadrosEstadisticos(gridSelector, resultados) {
+  const grid = document.querySelector(gridSelector);
+  if(!grid) return;
+
+  grid.innerHTML += `
+    <div class="estadistica-box" data-tooltip="Promedio de horas de uso">
+      <h4>Media</h4><p>${resultados.media.toFixed(2)}</p>
+    </div>
+    <div class="estadistica-box" data-tooltip="Valor central de los datos">
+      <h4>Mediana</h4><p>${resultados.mediana}</p>
+    </div>
+    <div class="estadistica-box" data-tooltip="Valor más repetido en la muestra">
+      <h4>Moda</h4><p>${resultados.moda}</p>
+    </div>
+    <div class="estadistica-box" data-tooltip="Variabilidad de los datos">
+      <h4>Desviación estándar</h4><p>${resultados.desviacion.toFixed(2)}</p>
+    </div>
+  `;
+}
