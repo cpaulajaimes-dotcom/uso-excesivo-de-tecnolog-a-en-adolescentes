@@ -239,12 +239,4 @@ footer{text-align:center;padding:24px;font-size:14px;opacity:0.9;}
   margin-right: 12px;
   padding: 8px;
   border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-/* ========================= */
-/* ENCUESTA - BARRA RESULTADO */
-/* ========================= */
-.barra-encuesta {
-  width: 100%;
-  background: #e5e7eb; /* gris claro de fondo
+  border
