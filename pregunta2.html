@@ -20,7 +20,7 @@ rel="stylesheet">
 <div class="header-text">
 <h1>Análisis estadístico</h1>
 <p>Pregunta 2 de la encuesta</p>
-<div id="frase">Concentración y dependencia del celular.</div>
+<div id="frase">Concentración sin revisar el celular.</div>
 </div>
 </div>
 </header>
@@ -29,7 +29,7 @@ rel="stylesheet">
 <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
 <a href="datosreales.html"><i class="fa-solid fa-chart-pie"></i> Datos reales</a>
 <a href="pregunta1.html"><i class="fa-solid fa-square-poll-vertical"></i> Pregunta 1</a>
-<a href="pregunta2.html"><i class="fa-solid fa-chart-column"></i> Pregunta 2</a>
+<a href="pregunta2.html"><i class="fa-solid fa-brain"></i> Pregunta 2</a>
 </nav>
 
 <section class="card">
@@ -42,10 +42,9 @@ rel="stylesheet">
 <h2><i class="fa-solid fa-table"></i> Tabla de frecuencias</h2>
 <div class="tabla-estadistica">
 <table>
-<tr><th>Respuesta</th><th>Frecuencia</th><th>Porcentaje</th></tr>
-<tr><td>Sí</td><td>18</td><td>53%</td></tr>
-<tr><td>No</td><td>6</td><td>18%</td></tr>
-<tr><td>A veces</td><td>10</td><td>29%</td></tr>
+<tr><th>Opción</th><th>Frecuencia</th><th>Porcentaje</th></tr>
+<tr><td>Sí</td><td>12</td><td>35%</td></tr>
+<tr><td>No</td><td>22</td><td>65%</td></tr>
 </table>
 </div>
 </section>
@@ -53,64 +52,63 @@ rel="stylesheet">
 <section class="card">
 <h2><i class="fa-solid fa-chart-line"></i> Resultados estadísticos</h2>
 <div class="estadistica-grid">
-<div class="estadistica-box"><h4>Total encuestados</h4><p>34</p></div>
-<div class="estadistica-box"><h4>Mayor frecuencia</h4><p>18</p></div>
-<div class="estadistica-box"><h4>Porcentaje mayor</h4><p>53%</p></div>
-<div class="estadistica-box"><h4>Menor frecuencia</h4><p>6</p></div>
-</div>
-<ul class="lista-analisis">
-<li>La respuesta con mayor frecuencia fue <b>"Sí"</b>, con 18 estudiantes.</li>
-<li>El 53% de los adolescentes afirma poder concentrarse sin revisar constantemente el celular.</li>
-<li>Un 29% respondió <b>"A veces"</b>, lo que indica dificultades ocasionales de concentración.</li>
-<li>El 18% indicó que no puede concentrarse fácilmente sin revisar el celular.</li>
-<li>Los resultados muestran que el uso frecuente del celular puede afectar la atención y concentración en algunos adolescentes.</li>
-</ul>
+  <div class="estadistica-box" data-tooltip="Es la cantidad de&#10;adolescentes que respondieron">
+    <h4>Total encuestados</h4><p>34</p>
+  </div>
 
-<!-- Botón para ejecutar el cálculo -->
-<button id="btnEstadisticas">Calcular medidas adicionales</button>
+  <div class="estadistica-box" data-tooltip="Número de&#10;respuestas más frecuentes">
+    <h4>Mayor frecuencia</h4><p>12</p>
+  </div>
+
+  <div class="estadistica-box" data-tooltip="Porcentaje más alto&#10;obtenido en la encuesta">
+    <h4>Porcentaje mayor</h4><p>35%</p>
+  </div>
+
+  <div class="estadistica-box" data-tooltip="Número de&#10;respuestas menos frecuentes">
+    <h4>Menor frecuencia</h4><p>0</p>
+  </div>
+
+  <!-- Medidas adicionales -->
+  <div class="estadistica-box" data-tooltip="Promedio de&#10;horas de uso diario">
+    <h4>Media</h4><p>5.82</p>
+  </div>
+
+  <div class="estadistica-box" data-tooltip="Valor central&#10;de las respuestas">
+    <h4>Mediana</h4><p>6</p>
+  </div>
+
+  <div class="estadistica-box" data-tooltip="Número más&#10;repetido en la encuesta">
+    <h4>Moda</h4><p>7</p>
+  </div>
+
+  <div class="estadistica-box" data-tooltip="Medida de&#10;variación de los datos">
+    <h4>Desviación estándar</h4><p>2.01</p>
+  </div>
+</div>
 </section>
 
 <section class="card">
 <h2><i class="fa-solid fa-calculator"></i> Aplicación de la regla de 3</h2>
-<p>Para calcular los porcentajes de cada respuesta se utilizó la regla de 3 simple.</p>
+<p>Para calcular el porcentaje de cada respuesta se utilizó la regla de 3 simple.</p>
 <div class="regla3-box">
-<p>Ejemplo con la respuesta: <b>"Sí"</b></p>
+<p>Ejemplo con la opción: <b>Sí</b></p>
 <p class="formula">34 estudiantes → 100%</p>
-<p class="formula">18 estudiantes → X</p>
-<p class="formula">X = (18 × 100) ÷ 34</p>
-<p class="formula resultado-formula">X = 53%</p>
+<p class="formula">12 estudiantes → X</p>
+<p class="formula">X = (12 × 100) ÷ 34</p>
+<p class="formula resultado-formula">X = 35%</p>
 </div>
-<p>Esto significa que aproximadamente el 53% de los adolescentes puede concentrarse fácilmente sin revisar el celular.</p>
+<p>Esto significa que aproximadamente el 35% de los adolescentes pueden concentrarse sin revisar el celular.</p>
 </section>
 
 <section class="card">
 <h2><i class="fa-solid fa-lightbulb"></i> Conclusión</h2>
-<p>Los resultados reflejan que, aunque muchos adolescentes consideran que pueden concentrarse sin revisar el celular, todavía existe un porcentaje importante que presenta dificultades de atención relacionadas con el uso de la tecnología.</p>
-<div class="mini-info">El análisis estadístico permitió interpretar los datos mediante frecuencias, porcentajes y aplicación de la regla de 3.</div>
+<p>Los resultados muestran que una parte significativa de los adolescentes encuestados no logra concentrarse sin revisar el celular. 
+Esto refleja la influencia que tiene el dispositivo en la atención y la capacidad de concentración.</p>
+<div class="mini-info">El análisis estadístico permitió interpretar los datos de forma cuantitativa mediante porcentajes, frecuencias y medidas de tendencia central.</div>
 </section>
 
-<!-- ========================= -->
-<!-- ENLACE AL SCRIPT EXTERNO -->
-<!-- ========================= -->
+<!-- Enlaza tu script principal -->
 <script src="script.js"></script>
-<script>
-  const datosPregunta2 = {
-    opciones: ["Sí", "No", "A veces"],
-    frecuencias: [18, 6, 10],
-    valores: [3, 1, 2] // Sí=3, No=1, A veces=2
-  };
-
-  document.getElementById("btnEstadisticas").addEventListener("click", () => {
-    const resultados2 = calcularEstadisticas(datosPregunta2.valores, datosPregunta2.frecuencias);
-
-    document.querySelector(".estadistica-grid").innerHTML += `
-      <div class="estadistica-box"><h4>Media</h4><p>${resultados2.media.toFixed(2)}</p></div>
-      <div class="estadistica-box"><h4>Mediana</h4><p>${resultados2.mediana}</p></div>
-      <div class="estadistica-box"><h4>Moda</h4><p>${resultados2.moda}</p></div>
-      <div class="estadistica-box"><h4>Desviación estándar</h4><p>${resultados2.desviacion.toFixed(2)}</p></div>
-    `;
-  });
-</script>
 
 </body>
 </html>
