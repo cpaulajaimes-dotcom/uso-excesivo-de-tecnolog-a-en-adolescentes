@@ -97,6 +97,26 @@ button{
 }
 button:hover{background:#1d4ed8;transform:translateY(-2px);}
 
+/* Botón específico de estadísticas */
+#btnEstadisticas1 {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  padding: 8px 14px;   /* compacto */
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  margin-top: 20px;
+  display: block;      /* ocupa solo su contenido */
+  margin-left: auto;   /* centrado */
+  margin-right: auto;
+}
+#btnEstadisticas1:hover {
+  transform: scale(1.05);
+  background: #1e3a8a;
+}
+
 /* ========================= */
 /* TABLAS */
 /* ========================= */
@@ -134,7 +154,7 @@ tr:hover{background:#eff6ff;}
 .estadistica-box::after {
   content: attr(data-tooltip);
   position: absolute;
-  top: -45px;   /* ✅ ahora arriba */
+  top: -45px;   /* arriba */
   left: 50%;
   transform: translateX(-50%);
   background: #1e3a8a;
@@ -142,47 +162,20 @@ tr:hover{background:#eff6ff;}
   padding: 6px 10px;
   border-radius: 6px;
   font-size: 13px;
-  white-space: nowrap;
+  white-space: pre-line; /* ✅ permite saltos de línea */
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-  z-index: 999; /* asegura que se vea por encima */
+  z-index: 999;
 }
-
-.estadistica-box:hover::after {
-  opacity: 1;
-}
-
-/* Tooltip personalizado arriba */
-.estadistica-box::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: -45px;   /* ✅ ahora arriba */
-  left: 50%;
-  transform: translateX(-50%);
-  background: #1e3a8a;
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 13px;
-  white-space: nowrap;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-  z-index: 999; /* asegura que se vea por encima */
-}
-
-.estadistica-box:hover::after {
-  opacity: 1;
-}
+.estadistica-box:hover::after {opacity: 1;}
 
 /* Flecha del tooltip */
 .estadistica-box::before {
   content: "";
   position: absolute;
-  top: -12px;   /* flecha arriba */
+  top: -12px;
   left: 50%;
   transform: translateX(-50%);
   border-width: 6px;
@@ -192,13 +185,7 @@ tr:hover{background:#eff6ff;}
   transition: opacity 0.3s;
   z-index: 999;
 }
-
-.estadistica-box:hover::before {
-  opacity: 1;
-}
-
-
-
+.estadistica-box:hover::before {opacity: 1;}
 
 /* ========================= */
 /* FOOTER */
