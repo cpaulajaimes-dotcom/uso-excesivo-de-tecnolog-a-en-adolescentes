@@ -120,20 +120,32 @@ function analizar(){
   let recomendacion =
   document.getElementById("recomendacion");
 
+  /* ===================== */
   /* ANIMACION CELULAR */
+  /* ===================== */
 
-  simbolo.style.transform = "scale(0.7)";
-  simbolo.style.opacity = "0.4";
+  if(simbolo){
+
+    simbolo.style.transform = "scale(0.7)";
+    simbolo.style.opacity = "0.4";
+
+  }
 
   setTimeout(()=>{
 
-    simbolo.style.transition = "0.5s";
-    simbolo.style.transform = "scale(1)";
-    simbolo.style.opacity = "1";
+    if(simbolo){
+
+      simbolo.style.transition = "0.5s";
+      simbolo.style.transform = "scale(1)";
+      simbolo.style.opacity = "1";
+
+    }
 
   },100);
 
+  /* ===================== */
   /* BARRA */
+  /* ===================== */
 
   if(barra){
 
@@ -175,30 +187,52 @@ function analizar(){
 
   }
 
+  /* ===================== */
   /* RESULTADOS */
+  /* ===================== */
 
   if(porcentajeFinal <= 35){
 
-    mensaje.innerHTML =
-    "RIESGO BAJO";
+    if(mensaje){
 
-    mensaje.style.color =
-    "#22c55e";
+      mensaje.innerHTML =
+      "RIESGO BAJO";
 
-    simbolo.innerHTML =
-    '<i class="fa-solid fa-face-smile"></i>';
+      mensaje.style.color =
+      "#22c55e";
 
-    simbolo.style.color =
-    "#22c55e";
+    }
 
-    detalle.innerHTML =
-    "Tu uso de tecnología parece equilibrado y saludable.";
+    if(simbolo){
 
-    tiempoPerdido.innerHTML =
-    "Tu nivel de distracción digital es bajo.";
+      simbolo.innerHTML =
+      '<i class="fa-solid fa-face-smile"></i>';
 
-    recomendacion.innerHTML =
-    "Continúa manteniendo buenos hábitos digitales.";
+      simbolo.style.color =
+      "#22c55e";
+
+    }
+
+    if(detalle){
+
+      detalle.innerHTML =
+      "Tu uso de tecnología parece equilibrado y saludable.";
+
+    }
+
+    if(tiempoPerdido){
+
+      tiempoPerdido.innerHTML =
+      "Tu nivel de distracción digital es bajo.";
+
+    }
+
+    if(recomendacion){
+
+      recomendacion.innerHTML =
+      "Continúa manteniendo buenos hábitos digitales.";
+
+    }
 
     resultadoFinal =
     "Riesgo Bajo";
@@ -207,26 +241,46 @@ function analizar(){
 
   else if(porcentajeFinal <= 70){
 
-    mensaje.innerHTML =
-    "RIESGO MEDIO";
+    if(mensaje){
 
-    mensaje.style.color =
-    "#f59e0b";
+      mensaje.innerHTML =
+      "RIESGO MEDIO";
 
-    simbolo.innerHTML =
-    '<i class="fa-solid fa-mobile-screen"></i>';
+      mensaje.style.color =
+      "#f59e0b";
 
-    simbolo.style.color =
-    "#f59e0b";
+    }
 
-    detalle.innerHTML =
-    "La tecnología comienza a afectar tu concentración.";
+    if(simbolo){
 
-    tiempoPerdido.innerHTML =
-    "Existe una distracción moderada causada por el celular.";
+      simbolo.innerHTML =
+      '<i class="fa-solid fa-mobile-screen"></i>';
 
-    recomendacion.innerHTML =
-    "Intenta reducir el tiempo en redes sociales.";
+      simbolo.style.color =
+      "#f59e0b";
+
+    }
+
+    if(detalle){
+
+      detalle.innerHTML =
+      "La tecnología comienza a afectar tu concentración.";
+
+    }
+
+    if(tiempoPerdido){
+
+      tiempoPerdido.innerHTML =
+      "Existe una distracción moderada causada por el celular.";
+
+    }
+
+    if(recomendacion){
+
+      recomendacion.innerHTML =
+      "Intenta reducir el tiempo en redes sociales.";
+
+    }
 
     resultadoFinal =
     "Riesgo Medio";
@@ -235,33 +289,55 @@ function analizar(){
 
   else{
 
-    mensaje.innerHTML =
-    "RIESGO ALTO";
+    if(mensaje){
 
-    mensaje.style.color =
-    "#ef4444";
+      mensaje.innerHTML =
+      "RIESGO ALTO";
 
-    simbolo.innerHTML =
-    '<i class="fa-solid fa-triangle-exclamation"></i>';
+      mensaje.style.color =
+      "#ef4444";
 
-    simbolo.style.color =
-    "#ef4444";
+    }
 
-    detalle.innerHTML =
-    "El uso excesivo de tecnología afecta tu atención.";
+    if(simbolo){
 
-    tiempoPerdido.innerHTML =
-    "Tu nivel de distracción digital es elevado.";
+      simbolo.innerHTML =
+      '<i class="fa-solid fa-triangle-exclamation"></i>';
 
-    recomendacion.innerHTML =
-    "Se recomienda establecer límites de uso.";
+      simbolo.style.color =
+      "#ef4444";
+
+    }
+
+    if(detalle){
+
+      detalle.innerHTML =
+      "El uso excesivo de tecnología afecta tu atención.";
+
+    }
+
+    if(tiempoPerdido){
+
+      tiempoPerdido.innerHTML =
+      "Tu nivel de distracción digital es elevado.";
+
+    }
+
+    if(recomendacion){
+
+      recomendacion.innerHTML =
+      "Se recomienda establecer límites de uso.";
+
+    }
 
     resultadoFinal =
     "Riesgo Alto";
 
   }
 
+  /* ===================== */
   /* CONTADOR */
+  /* ===================== */
 
   let actual = 0;
 
@@ -291,7 +367,9 @@ function analizar(){
 
   },15);
 
+  /* ===================== */
   /* GUARDAR */
+  /* ===================== */
 
   localStorage.setItem(
     "ultimoResultado",

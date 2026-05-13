@@ -239,7 +239,7 @@ tr:hover{
 .estadistica-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
+  gap: 45px;
   margin-top:25px;
   margin-bottom:30px;
 }
@@ -348,6 +348,11 @@ footer{
 .encuesta-item{
   display:flex;
   flex-direction:column;
+  background:#f8fbff;
+  padding:22px;
+  border-radius:18px;
+  border:2px solid #dbeafe;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
 }
 
 .encuesta-item label{
@@ -403,7 +408,7 @@ footer{
 /* CELULAR */
 
 #simbolo{
-  font-size:65px;
+  font-size:48px;
   color:#2563eb;
   margin:20px 0;
   animation:flotar 3s ease-in-out infinite;
