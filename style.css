@@ -130,11 +130,11 @@ tr:hover{background:#eff6ff;}
 .estadistica-box p{font-size:28px;font-weight:800;color:#2563eb;}
 .estadistica-box:hover{transform:scale(1.05);}
 
-/* Tooltip personalizado */
+/* Tooltip personalizado arriba */
 .estadistica-box::after {
   content: attr(data-tooltip);
   position: absolute;
-  top: -40px;   /* ✅ ahora arriba */
+  top: -45px;   /* ✅ ahora arriba */
   left: 50%;
   transform: translateX(-50%);
   background: #1e3a8a;
@@ -147,11 +147,57 @@ tr:hover{background:#eff6ff;}
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-  z-index: 10; /* asegura que se vea por encima */
+  z-index: 999; /* asegura que se vea por encima */
 }
+
 .estadistica-box:hover::after {
   opacity: 1;
 }
+
+/* Tooltip personalizado arriba */
+.estadistica-box::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -45px;   /* ✅ ahora arriba */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e3a8a;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 999; /* asegura que se vea por encima */
+}
+
+.estadistica-box:hover::after {
+  opacity: 1;
+}
+
+/* Flecha del tooltip */
+.estadistica-box::before {
+  content: "";
+  position: absolute;
+  top: -12px;   /* flecha arriba */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #1e3a8a transparent;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 999;
+}
+
+.estadistica-box:hover::before {
+  opacity: 1;
+}
+
+
 
 
 /* ========================= */
